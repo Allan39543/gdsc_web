@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PROFESSIONAL HAIRCUT</title>
+        <link href="styles.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <style>
+            *{
+                list-style-type: none;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            
+            .menu{
+                display: flex;
+                justify-content: center;
+                align-content: center;
+            }
+            
+            ul{
+                width: 50%;
+                display: flex;
+                justify-content: space-between;
+                background: blue;
+                padding: 2rem;
+            }
+            
+            li{
+                cursor: pointer;
+                padding: 1rem;
+                border-radius: 10px;
+            }
+            
+            .content{
+                padding: 2rem;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+            }
+            
+                    
+            .tab-content{
+                display: none;
+            }
+            
+            .show{
+                display: block;
+                width: 50vw;
+            }
+            
+            .setBackground{
+                background: white;
+            }
+           
+        </style>
+    </head>
+    <body>
+       <div class="container">
+           <div class="menu">
+               <ul>
+                   <li id="menu-1" class="menu-item setBackground">Home</li>
+                   <li id="menu-2" class="menu-item">About Us</li>
+                   <li id="menu-3" class="menu-item">Newsletter</li>
+                   <li id="menu-4" class="menu-item">Testimonials</li>                   
+               
+               </ul>
+           
+           </div>
+           <div class="content">
+               <div>
+                   <div id="menu-1-content" class="tab-content show" >The disabled property sets or returns whether a button is disabled, or not.A disabled element is unusable and un-clickable. Disabled elements are usually rendered in gray by default in browsers.This property reflects the HTML disabled attribute.</div>
+
+                   <div id="menu-2-content" class="tab-content">Many translated example sentences containing "skin moisture" – French-English dictionary and search engine for French translations.</div>
+
+                   <div id="menu-3-content" class="tab-content">Student is able to link each of the aspects of their identified PICS with the personal mission statement. Student gives insight to why each of the PICS are their PICS. Student gives relevant justification for why they chose their mission statement
+                   </div>
+               </div>
+                
+           </div>
+        
+        </div>
+        
+        
+        
+        <script type="text/javascript">
+            const listOfMenus=document.querySelectorAll('.menu-item'),
+                  listOfContents=document.querySelectorAll('.tab-content');
+            
+            function selectedMenu(e){
+                removeBackground();
+                removeShow();
+                this.classList.add('setBackground');
+                const tabContentItem = document.querySelector(`#${this.id}-content`);
+                tabContentItem.classList.add('show');
+                
+            }
+            
+            function removeShow(){
+                listOfContents.forEach(item =>{
+                    item.classList.remove('show');
+                })
+            }
+            
+            function removeBackground(){
+                listOfMenus.forEach(item =>{
+                    item.classList.remove('setBackground');
+                })
+            }
+            
+            listOfMenus.forEach(item =>{
+                item.addEventListener('click', selectedMenu);
+            })
+            
+        
+        
+        
+        </script>
+        
+        
+    </body>
+</html>
